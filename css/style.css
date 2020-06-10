@@ -1,0 +1,39 @@
+#main {
+    padding-top: 50px;
+    height: 700px;
+    text-align: center;
+    background-image: url(../img/home.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+#main p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70%;
+    color: white;
+    box-shadow: white;
+}
+
+#texto-home {
+    margin-top: 200px;
+}
+
+.cartao-senador {
+    transition: transform .2s;
+}
+.cartao-senador:hover {
+    transform: scale(1.1);
+}
+
+#paginacao {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo{
+    font-weight: 300;
+    text-align: center !important;
+}
