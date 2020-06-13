@@ -1,4 +1,4 @@
-$.getJSON('http://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', function(data) {
+$.getJSON('https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', function(data) {
     num_parlamentares = data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar.length;
 
     $('#titulo-galeria').append('<h3 class="titulo text-muted mb-3">'+num_parlamentares+' Encontrados</h3>');
@@ -132,7 +132,7 @@ $.getJSON('http://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', fu
         }
 
         //Requisição do JSON com as comissões do parlamentar
-        $.getJSON('http://legis.senado.leg.br/dadosabertos/senador/'+cod_parlamentar+'/comissoes.json', function(data2) {
+        $.getJSON('https://legis.senado.leg.br/dadosabertos/senador/'+cod_parlamentar+'/comissoes.json', function(data2) {
             var cod_comissao_parlamentar = data2.MembroComissaoParlamentar.Parlamentar.IdentificacaoParlamentar.CodigoParlamentar;
             var total_comissoes = data2.MembroComissaoParlamentar.Parlamentar.MembroComissoes.Comissao.length
                 if(cod_comissao_parlamentar == data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar[i].IdentificacaoParlamentar.CodigoParlamentar) {
