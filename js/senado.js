@@ -164,7 +164,7 @@ $.getJSON('https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', f
 
     //Função que controla a paginação de cards
     function paginacao(botao){
-        id_botao = parseInt(botao.path[0].id.slice(6, ));
+        id_botao = parseInt(parseInt(botao.target.attributes[1].value.slice(6, 7)));
 
         //Define o primeiro e o ultimo card de cada página
         if(id_botao == 1) {
