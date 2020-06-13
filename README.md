@@ -17,7 +17,11 @@ A aplicação foi feita do zero, utilizando:
 
 Para rodar a aplicação basta baixar o arquivo ZIP, descompactar e abrir o arquivo index.html.
 
+Também hospedei a aplicação no netlify - [Clique aqui para abrir]([https://agitated-hypatia-a94cf6.netlify.app](https://agitated-hypatia-a94cf6.netlify.app/)). (Caso tenha problemas com esse link, tente baixar e rodar no seu desktop).
+
 ## Autor
+
+
 
 **Daniel Cardoso** - [Site pessoal](danielcardoso.com.br)
 
