@@ -42,10 +42,76 @@
           <!--Galeria de senadores-->
           <div class="album py-5 bg-light" id="senadores">
             <h1 class="titulo" id="titulo-galeria">Senadores em exercício</h1>
+            <!--Área de filtragem-->
+            <div class="container" id="filtro">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#filtragem" aria-expanded="false" aria-controls="filtragem">
+                Filtrar busca
+              </button>
+              <div class="collapse" id="filtragem">
+                <div class="row card-body" id="botoes-filtro">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <select id="select-estados" class="form-control">
+                      <option value=0>Todos os Estados</option>
+                      <option value="AC">Acre (AC)</option>
+                      <option value="AL">Alagoas (AL)</option>
+                      <option value="AP">Amapá (AP)</option>
+                      <option value="AM">Amazonas (AM)</option>
+                      <option value="BA">Bahia (BA)</option>
+                      <option value="CE">Ceará (CE)</option>
+                      <option value="DF">Distrito Federal (DF)</option>
+                      <option value="ES">Espírito Santo (ES)</option>
+                      <option value="GO">Goiás (GO)</option>
+                      <option value="MA">Maranhão (MA)</option>
+                      <option value="MT">Mato Grosso (MT)</option>
+                      <option value="MS">Mato Grosso do Sul (MS)</option>
+                      <option value="MG">Minas Gerais (MG)</option>
+                      <option value="PA">Pará (PA)</option>
+                      <option value="PB">Paraíba (PB)</option>
+                      <option value="PR">Paraná (PR)</option>
+                      <option value="PE">Pernambuco (PE)</option>
+                      <option value="PI">Piauí (PI)</option>
+                      <option value="RJ">Rio de Janeiro (RJ)</option>
+                      <option value="RN">Rio Grande do Norte (RN)</option>
+                      <option value="RS">Rio Grande do Sul (RS)</option>
+                      <option value="RO">Rondônia (RO)</option>
+                      <option value="RR">Roraima (RR)</option>
+                      <option value="SC">Santa Catarina (SC)</option>
+                      <option value="SP">São Paulo (SP)</option>
+                      <option value="SE">Sergipe (SE)</option>
+                      <option value="TO">Tocantins (TO)</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <select id="select-partidos" class="form-control">
+                      <option value=0>Todos os Partidos</option>
+                      <option value="CIDADANIA">CIDADANIA</option>
+                      <option value="DEM">DEM</option>
+                      <option value="MDB">MDB</option>
+                      <option value="PDT">PDT</option>
+                      <option value="PODEMOS">PODEMOS</option>
+                      <option value="PSD">PSD</option>
+                      <option value="PP">PP</option>
+                      <option value="REDE">REDE</option>
+                      <option value="PROS">PROS</option>
+                      <option value="PT">PT</option>
+                      <option value="REPUBLICANOS">REPUBLICANOS</option>
+                      <option value="PSDB">PSDB</option>
+                      <option value="PL">PL</option>
+                      <option value="PSB">PSB</option>
+                      <option value="PSL">PSL</option>
+                      <option value="PSC">PSC</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-sm-4 col-6">
+                    <button id="aplicar-filtro" class="btn btn-success">Aplicar filtro</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="container">
               <!--Cards-->
               <div class="row" id="galeria"></div>
-              <!--Paginação-->
+              <!--Botões de paginação-->
               <div class="row">
                 <nav aria-label="Page navigation example" id="paginacao">
                   <ul class="pagination justify-content-center shadow" id="barra-paginacao">
@@ -53,7 +119,16 @@
                 </nav>
               </div>
             </div>
-          </div> 
+          </div>
+
+          <div id="modal-senador"></div>
+
+          <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+              <p><b>© 2020 - Buscador Senado Federal - todos os direitos reservados.</b></p>
+              <small>Designed by <a href="danielcardoso.com.br" target="_blank">Daniel Cardoso</a></small>
+            </div>
+          </footer>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/senado.js"></script>

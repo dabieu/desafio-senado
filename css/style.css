@@ -59,3 +59,77 @@
     background-color: #007bff;
     color: #fff; 
 }
+
+.modal-body img {
+    max-width: 250px;
+}
+
+.modal-body span {
+    font-size: 1.1rem;
+}
+
+.modal-body b {
+    font-size: 1.1rem;
+}
+
+.modal-header{
+    display: block !important;
+}
+
+.modal-header .close {
+    margin: -1rem -1rem -1rem 0;
+    margin-bottom: 9px;
+    margin-right: 3px;
+}
+
+.modal-footer span {
+    margin-right: auto;
+}
+
+.jumbotron{
+    margin-bottom: 0px !important;
+}
+
+#detalhes-senador {
+    transform: translate(0, -50%);
+    top: 50%;
+    margin: 0 auto;
+}
+
+#link-parlamentar {
+    color: #fff !important;
+    margin-right: auto;
+}
+
+#filtro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#botoes-filtro {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#select-estados, #select-partidos{
+    margin-bottom: 8px;
+}
+
+#partido-sigla {
+    margin-left: 15px;
+}
+
+html {
+    min-width: 390px;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+  }
+
+@media screen and (max-width: 770px) {
+    #periodo {
+      text-align: left !important;
+    }
+  }
