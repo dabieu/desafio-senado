@@ -1,4 +1,14 @@
-$.getJSON('https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', function(data) {
+const url = 'https://legis.senado.leg.br/dadosabertos/senador/lista/atual';
+$.ajax({
+    url: url,
+    type: "GET",
+    dataType: 'JSON',
+    success: function(data) {
+        listar_parlamentares(data);
+    }
+});
+
+function listar_parlamentares(data) {
     num_parlamentares = data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar.length;
 
     $('#titulo-galeria').append('<h3 class="titulo text-muted mb-3">'+num_parlamentares+' Encontrados</h3>');
@@ -129,30 +139,7 @@ $.getJSON('https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', f
         //Esconde os cards depois dos 8 primeiros
         if(i >= 8) {
             $('#card-'+i).hide();
-        }
-
-        //Requisição do JSON com as comissões do parlamentar
-        $.getJSON('https://legis.senado.leg.br/dadosabertos/senador/'+cod_parlamentar+'/comissoes.json', function(data2) {
-            var cod_comissao_parlamentar = data2.MembroComissaoParlamentar.Parlamentar.IdentificacaoParlamentar.CodigoParlamentar;
-            var total_comissoes = data2.MembroComissaoParlamentar.Parlamentar.MembroComissoes.Comissao.length
-                if(cod_comissao_parlamentar == data.ListaParlamentarEmExercicio.Parlamentares.Parlamentar[i].IdentificacaoParlamentar.CodigoParlamentar) {
-                    var num_titular = 0;
-                    var num_suplente = 0;
-                    for(let j = 0; j < total_comissoes; j++) {
-                        if(data2.MembroComissaoParlamentar.Parlamentar.MembroComissoes.Comissao[j].DescricaoParticipacao == 'Titular') {
-                            num_titular++;
-                        } else if (data2.MembroComissaoParlamentar.Parlamentar.MembroComissoes.Comissao[j].DescricaoParticipacao == 'Suplente') {
-                            num_suplente++;
-                        }
-                    }
-                    
-                    $('#dados-pessoais-'+i).append('<span><b>Comissões como titular: </b>'+num_titular+'<span> <br>');
-                    $('#dados-pessoais-'+i).append('<span><b>Comissões como suplente: </b>'+num_suplente+'<span> <br>');
-                    
-                }
-        });
-
-        
+        }      
     }
  
     //Calcula quantas páginas deverão ser criadas (8 cards em cada página)
@@ -240,4 +227,4 @@ $.getJSON('https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json', f
 
     document.getElementById('aplicar-filtro').addEventListener('click', filtrar);
 
-});
+}
